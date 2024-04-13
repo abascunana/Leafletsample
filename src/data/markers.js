@@ -1,6 +1,7 @@
 import {
   // CAVE,
   CAR,
+  PARKING,
   // VILLAGE,
 } from "../components/consts";
 export const markers = [
@@ -17,6 +18,14 @@ export const markers = [
     type: CAR,
     location: [-70, 105],
     description: "Coche en la base de plankton",
+    link: "",
+    major: false,
+  },
+  {
+    name: "Parking Plankton",
+    type: PARKING,
+    location: [-70, 110],
+    description: "Parking n.205",
     link: "",
     major: false,
   }
