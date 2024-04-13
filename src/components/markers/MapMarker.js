@@ -15,7 +15,7 @@ const MapMarker = ({ marker, zoom, index }) => {
           <br />
           {!!link ? (
             <a href={link} target="_blank" rel="noreferrer">
-              Wiki Page
+              Link
             </a>
           ) : (
             ""

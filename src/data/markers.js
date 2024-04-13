@@ -1,36 +1,23 @@
 import {
   // CAVE,
-  CITY,
-  // DUNGEON,
-  // FORT,
-  PORTAL,
-  // TOWN,
-  UNKNOWN,
+  CAR,
   // VILLAGE,
 } from "../components/consts";
 export const markers = [
   {
-    name: "Test City",
-    type: CITY,
-    location: [-90, 128],
-    description: "",
-    link: "",
-    major: false,
+    name: "Bus Rock Bottom",
+    type: CAR,
+    location: [-104, 129.625],
+    description: "Autobús al abismo",
+    link: "https://www.youtube.com/watch?v=BPpLpA48FkY",
+    major: true,
   },
   {
-    name: "X mark",
-    type: UNKNOWN,
-    location: [-91, 128],
-    description: "We're Here",
+    name: "Coche Plankton",
+    type: CAR,
+    location: [-70, 105],
+    description: "Coche en la base de plankton",
     link: "",
     major: false,
-  },
-  {
-    name: "",
-    type: PORTAL,
-    location: [-92, 128],
-    description: "Test",
-    link: "https://google.com",
-    major: false,
-  },
+  }
 ];

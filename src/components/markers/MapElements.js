@@ -7,18 +7,12 @@ import {
   TileLayer,
 } from "react-leaflet";
 import {
-  CAVE,
-  CITY,
-  DUNGEON,
-  FARM,
-  FORT,
-  PORTAL,
-  TOWN,
+  CAR,
+  PARKING,
   UNKNOWN,
-  VILLAGE,
 } from "../consts";
 import { markers } from "../../data/markers";
-import { borders } from "../../data/borders";
+import { arrows } from "../../data/borders";
 import MapMarker from "./MapMarker";
 
 const MapElements = ({ zoom, coords }) => {
@@ -26,16 +20,11 @@ const MapElements = ({ zoom, coords }) => {
   let wilderness = [];
   markers.forEach((marker, index) => {
     switch (marker.type) {
-      case CITY:
-      case VILLAGE:
-      case TOWN:
-      case FORT:
-      case FARM:
+      case CAR:
+      case PARKING:
         civilization.push(MapMarker({ marker, zoom, index }));
         break;
-      case PORTAL:
-      case DUNGEON:
-      case CAVE:
+
       case UNKNOWN:
         wilderness.push(MapMarker({ marker, zoom, index }));
         break;
@@ -51,8 +40,8 @@ const MapElements = ({ zoom, coords }) => {
       <LayersControl.Overlay checked name="Borders" id="Borders">
         <LayerGroup>
           <Polyline
-            positions={borders}
-            pathOptions={{ color: "white", dashArray: "4" }}
+            positions={arrows}
+            pathOptions={{ color: "green", dashArray: "10" }}
           />
         </LayerGroup>
       </LayersControl.Overlay>
@@ -70,6 +59,7 @@ const MapElements = ({ zoom, coords }) => {
       >
         <LayerGroup>{wilderness}</LayerGroup>
       </LayersControl.Overlay>
+      // server
       <LayersControl.Overlay name="Click Location" id="ClickLocation">
         {coords !== [] ? (
           <Marker position={coords}>
