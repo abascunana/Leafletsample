@@ -1,10 +1,6 @@
 import L from "leaflet";
 import ReactDOMServer from "react-dom/server";
-import {
-  GiCarSeat,
-  GiParkBench,
-  
-} from "react-icons/gi";
+
 
 import { FaParking, FaCarSide} from "react-icons/fa";
 import { IconContext } from "react-icons";
@@ -64,7 +60,7 @@ export const unknown = L.divIcon({
   html: ReactDOMServer.renderToString(
     <IconContext.Provider value={{ size: "2em" }}>
       <div>
-        <GiParkBench />
+       
       </div>
     </IconContext.Provider>
   ),
