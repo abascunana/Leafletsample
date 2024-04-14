@@ -60,7 +60,7 @@ export const unknown = L.divIcon({
   html: ReactDOMServer.renderToString(
     <IconContext.Provider value={{ size: "2em" }}>
       <div>
-       
+      <FaCarSide/>
       </div>
     </IconContext.Provider>
   ),

@@ -16,17 +16,19 @@ import { arrows } from "../../data/borders";
 import MapMarker from "./MapMarker";
 
 const MapElements = ({ zoom, coords }) => {
-  let civilization = [];
-  let wilderness = [];
+  let parking = [];
+  let car = [];
   markers.forEach((marker, index) => {
     switch (marker.type) {
-      case CAR:
+      
       case PARKING:
-        civilization.push(MapMarker({ marker, zoom, index }));
+        parking.push(MapMarker({ marker, zoom, index }));
         break;
 
-      case UNKNOWN:
-        wilderness.push(MapMarker({ marker, zoom, index }));
+        case CAR:
+        console.log("la url de esta página es "+ window.location.href)  
+        marker.location = [0,0]
+        car.push(MapMarker({ marker, zoom, index }));
         break;
       default:
         console.error("Invalid Location Type");
@@ -37,7 +39,7 @@ const MapElements = ({ zoom, coords }) => {
       <LayersControl.BaseLayer checked name="Basemap">
         <TileLayer url="tiles/{z}/{x}/{y}.png" noWrap={true} />
       </LayersControl.BaseLayer>
-      <LayersControl.Overlay checked name="Borders" id="Borders">
+      <LayersControl.Overlay checked name="Indicaciones a salidas" id="Borders">
         <LayerGroup>
           <Polyline
             positions={arrows}
@@ -47,19 +49,18 @@ const MapElements = ({ zoom, coords }) => {
       </LayersControl.Overlay>
       <LayersControl.Overlay
         checked
-        name="Civilized Locations"
-        id="CivilizedLocations"
+        name="Aparcamientos"
+        id="ParkingsLocation"
       >
-        <LayerGroup>{civilization}</LayerGroup>
+        <LayerGroup>{parking}</LayerGroup>
       </LayersControl.Overlay>
       <LayersControl.Overlay
         checked
-        name="Wilderness Locations"
-        id="WildernessLocations"
+        name="Localización actual"
+        id="CarLocation"
       >
-        <LayerGroup>{wilderness}</LayerGroup>
+        <LayerGroup>{car}</LayerGroup>
       </LayersControl.Overlay>
-      // server
       <LayersControl.Overlay name="Click Location" id="ClickLocation">
         {coords !== [] ? (
           <Marker position={coords}>

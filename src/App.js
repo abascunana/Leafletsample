@@ -10,7 +10,8 @@ const App = () => {
   //Change this to the zoom level you wish to start on
   const STARTING_ZOOM = 0;
   //Change this to the focal point of your map
-  const CENTER_POINT = [0, 0];
+  //Get Position from URL
+  const CENTER_POINT = [0,0];
 
   const [currentZoom, setZoomLevel] = useState(STARTING_ZOOM);
   const updateZoom = (newZoomLevel) => setZoomLevel(newZoomLevel);
