@@ -26,8 +26,22 @@ const MapElements = ({ zoom, coords }) => {
         break;
 
         case CAR:
-        console.log("la url de esta página es "+ window.location.href)  
-        marker.location = [0,0]
+        if(window.location.href.endsWith("patricio")){
+          marker.location = [-76,142]
+        }
+       else if(window.location.href.endsWith("bob")){
+          marker.location = [-70.5,180]
+        }
+        else if(window.location.href.endsWith("calamardo")){
+          marker.location = [-79,162.5]
+        }
+        else if(window.location.href.endsWith("holandes")){
+          marker.location = [-47,66]
+        }
+        else{
+          marker.location = [0,0]
+        }
+       
         car.push(MapMarker({ marker, zoom, index }));
         break;
       default:

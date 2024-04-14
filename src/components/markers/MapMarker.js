@@ -8,20 +8,9 @@ const MapMarker = ({ marker, zoom, index }) => {
 
   return !!icon ? (
     <Marker position={location} icon={icon} id={index + name}>
-      {!!name ? <Tooltip>{name}</Tooltip> : null}
-      {!!description ? (
-        <Popup>
-          {description}
-          <br />
-          {!!link ? (
-            <a href={link} target="_blank" rel="noreferrer">
-              Link
-            </a>
-          ) : (
-            ""
-          )}
-        </Popup>
-      ) : null}
+        <Tooltip direction="bottom" offset={[0, 20]} opacity={1} permanent>
+        {description}
+      </Tooltip>
     </Marker>
   ) : null;
 };

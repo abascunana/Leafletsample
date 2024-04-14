@@ -6,8 +6,8 @@ export const markers = [
   {
     name: "Localización actual",
     type: CAR,
-    location: [-104, 129.625],
-    description: "",
+    location: [0, 0],
+    description: "Localizacion Actual",
     link: "",
     major: true,
   },
